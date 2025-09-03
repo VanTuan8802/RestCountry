@@ -14,9 +14,22 @@
 		AB9523DE2E685D480030D473 /* RestCountry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestCountry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AB9525D42E688EF10030D473 /* Exceptions for "RestCountry" folder in "RestCountry" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = AB9523DD2E685D480030D473 /* RestCountry */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AB9523E02E685D480030D473 /* RestCountry */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AB9525D42E688EF10030D473 /* Exceptions for "RestCountry" folder in "RestCountry" target */,
+			);
 			path = RestCountry;
 			sourceTree = "<group>";
 		};
