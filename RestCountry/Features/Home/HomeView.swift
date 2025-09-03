@@ -9,7 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Hello Viet Nam")
+        VStack {
+            HeaderView(title: "Countries Info", showBack: false)
+
+            Spacer()
+        }
+        .ignoresSafeArea(.all)
     }
 }
 
