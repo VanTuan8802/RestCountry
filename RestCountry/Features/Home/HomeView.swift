@@ -11,7 +11,7 @@ import Factory
 struct HomeView: View {
 
     @InjectedObject(\.app) internal var app: AppManager
-    
+
     var body: some View {
         VStack {
             HeaderView(title: "Countries Info", showBack: false)
