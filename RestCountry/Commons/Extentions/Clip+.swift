@@ -10,6 +10,14 @@ import SwiftUI
 
 extension View {
 
+    var radius4: some View {
+        self.clipShape(RoundedRectangle(cornerRadius: 4))
+    }
+
+    var radius10: some View {
+        self.clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+
     var radius16: some View {
         self.clipShape(RoundedRectangle(cornerRadius: 16))
     }

@@ -20,7 +20,7 @@ struct ContinentItemView: View {
 
                 Text(continent.name)
                     .font(.headline)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color.color212121)
             }
             .padding()
         }

@@ -7,17 +7,18 @@
 
 import Foundation
 
-struct Name: Decodable {
+struct Name: Decodable, Hashable {
     let common: String
     let official: String
 }
 
-struct Flags: Decodable {
+struct Flags: Decodable, Hashable {
     let png: String?
     let svg: String?
 }
 
-struct CountryModel: Decodable {
+struct CountryModel: Decodable, Identifiable, Hashable {
+    var id: String { cca2 ?? UUID().uuidString }
     let name: Name
     let cca2: String?
     let region: String?

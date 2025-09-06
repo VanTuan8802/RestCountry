@@ -6,12 +6,14 @@ enum Destination: Equatable {
     }
 
     case home
+    case listCoutries(continent: ContinentEnum)
 }
 
 extension Destination {
     var identifier: String {
         switch self {
         case .home: return "home"
+        case .listCoutries: return "listCoutries"
         }
     }
 }
@@ -22,6 +24,8 @@ extension Navigation {
         switch destinationWrapper.destination {
         case .home:
             HomeView()
+        case .listCoutries(let continent):
+            ListCountryView(continent: continent)
         }
     }
 }

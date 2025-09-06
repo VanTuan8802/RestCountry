@@ -34,6 +34,9 @@ struct HomeView: View {
                            ContinentItemView(continent: continent)
                                .frame(width: geo.size.width,
                                       height: geo.size.width * 0.9)
+                               .onTapGesture {
+                                   app.navi.push(.listCoutries(continent: continent))
+                               }
                        }
                        .aspectRatio(1/0.9, contentMode: .fit)
                    }

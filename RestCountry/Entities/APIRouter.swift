@@ -11,9 +11,10 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     case continent(_ region: String)
     case country(_ name: String)
+    case subregion(_ name: String)   // ✅ thêm case mới
 
     var baseURL: URL {
-        return URL(string: "https://restcountries.com/v3.1")!
+        return URL(string: AppConstants.baseURL)!
     }
 
     var method: HTTPMethod {
@@ -26,11 +27,13 @@ enum APIRouter: URLRequestConvertible {
             return "region/\(region)"
         case .country(let name):
             return "name/\(name)"
+        case .subregion(let name):
+            return "subregion/\(name)"
         }
     }
 
     var parameters: Parameters? {
-        return nil // mình không cần param body
+        return nil
     }
 
     func asURLRequest() throws -> URLRequest {

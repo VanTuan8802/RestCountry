@@ -8,5 +8,5 @@
 import Foundation
 
 struct AppConstants {
-    static let baseURL = "https://restcountries.com/v3.1/independent?status=true"
+    static let baseURL = "https://restcountries.com/v3.1"
 }

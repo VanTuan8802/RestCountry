@@ -34,7 +34,7 @@ extension Font {
 
     /// Medium
     static let medium10 = Font.custom(FontFamily.medium.font, size: 10)
-    static let medium16 = Font.custom(FontFamily.medium.font, size: 16)
+    static let medium12 = Font.custom(FontFamily.medium.font, size: 12)
 
     /// SemiBold
     static let semibold12 = Font.custom(FontFamily.semiBold.font, size: 12)
