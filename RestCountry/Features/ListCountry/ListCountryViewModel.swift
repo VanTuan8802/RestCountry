@@ -9,6 +9,8 @@ import Foundation
 
 final class ListCountryViewModel: ObservableObject {
     @Published var listCoutries: [CountryModel] = []
+    @Published var searchText: String = ""
+
     var continent: ContinentEnum = .asia
     
     init(continent: ContinentEnum) {
@@ -18,7 +20,17 @@ final class ListCountryViewModel: ObservableObject {
             await fetchData()
         }
     }
-    
+
+    var filteredCountries: [CountryModel] {
+            if searchText.isEmpty {
+                return listCoutries
+            } else {
+                return listCoutries.filter { country in
+                    country.name.common.localizedCaseInsensitiveContains(searchText)
+                }
+            }
+        }
+
     @MainActor
     private func fetchData() {
         Task {

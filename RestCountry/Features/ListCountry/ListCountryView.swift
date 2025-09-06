@@ -19,14 +19,32 @@ struct ListCountryView: View {
 
     var body: some View {
         VStack {
-            HeaderView(title: viewModel.continent.name,
-                       showBack: true,
-                       backAction: {
-                app.navi.pop()
-            })
+            HeaderView(
+                title: viewModel.continent.name,
+                showBack: true,
+                backAction: {
+                    app.navi.pop()
+                })
+            searchView
             gridView
         }
         .ignoresSafeArea()
+    }
+
+    @MainActor @ViewBuilder
+    private var searchView: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.gray)
+            TextField("Search country", text: $viewModel.searchText)
+                .textFieldStyle(PlainTextFieldStyle())
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(12)
+        .padding(.horizontal, 20)
     }
 
     @MainActor @ViewBuilder
@@ -38,7 +56,7 @@ struct ListCountryView: View {
         ]
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(viewModel.listCoutries, id: \.self) { country in
+                ForEach(viewModel.filteredCountries, id: \.self) { country in
                     GeometryReader { geo in
                         CountryItemView(country: country)
                             .frame(width: geo.size.width,
